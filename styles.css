@@ -1,0 +1,257 @@
+/* Variables globales */
+:root {
+    --color-primario: #ff6600;
+    --color-primario-hover: #cc5500;
+    --color-fondo: #f4f4f4;
+    --color-texto: #333;
+    --color-nav: rgba(51, 51, 51, 0.9);
+    --color-nav-texto: white;
+    --color-footer: #333;
+    --color-footer-texto: white;
+}
+
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    padding-top: 60px; /* Evita que el contenido quede tapado por el menú fijo */
+    color: var(--color-texto);
+}
+
+/* Encabezado y barra de navegación */
+header {
+    background-color: var(--color-footer);
+    color: var(--color-footer-texto);
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-nav);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--color-nav-texto);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: var(--color-primario);
+}
+
+/* Secciones */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Banner promocional */
+#banner {
+    position: relative;
+    background: url('img/banner.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    overflow: hidden;
+}
+
+#banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#banner h2, #banner p, #banner .btn {
+    position: relative;
+    z-index: 1;
+}
+
+#banner h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+#banner p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Botón genérico */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--color-primario);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: var(--color-primario-hover);
+}
+
+/* Autos */
+.autos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+}
+
+.auto {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.auto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.auto img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Formulario de contacto */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    background: var(--color-texto);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #555;
+}
+
+/* Sección Sobre Nosotros */
+#sobre-nosotros {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#sobre-nosotros img {
+    width: 80%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Pie de página */
+footer {
+    background-color: var(--color-footer);
+    color: var(--color-footer-texto);
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Botón de volver arriba */
+#btn-arriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-primario);
+    color: white;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
+}
+
+#btn-arriba:hover {
+    background-color: var(--color-primario-hover);
+    transform: scale(1.1);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .autos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
